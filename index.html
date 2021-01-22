@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"">
+  <head>
+    <meta charset="utf-8">
+    <title>Night Watch</title>
+    <link rel="stylesheet" href="https://nw-fallback.netlify.app/style.css" />
+  </head>
+  <body>
+     <div class="topnav" id="navbar"><a href="/index" style="text-decoration: none; color: #ffffff; float: left;">Home</a><a href="shortcuts" style="text-decoration: none; color: #e6e6e6; float: right;">Premade timers</a></div>
+    <h1>Welcome to NightWatch!</h1>
+    <h2>NightWatch is a website to check the curfew at your area!</h2>
+    <a href="/style.css">Checkout the CSS!</a>
+    <h3>Let's setup your curfew! When should it start?</h3>
+    <input type="time" id="start">
+    <button class="button" type="button" onclick="start()">Next</button>
+    <p id="end"></p>
+    <p id="timeresult"></p>
+
+    <script>
+function start() {
+var input, text;
+
+    input = document.getElementById("start").value;
+
+    if ( input ) {
+      text = '<p>Enter end time: </p><input type="time" id="end1"><button class="button" type="button" onclick="end()">Generate</button>';
+      starttime = input }
+    else {
+      text = "That's not a valid time!" }
+
+    document.getElementById("end").innerHTML = text;
+}
+
+
+function end() {
+  var input1, text1;
+
+  input1 = document.getElementById("end1").value;
+
+  if ( input1 ) {
+    text1 = `Your curfew countdown timer has been generated! Check it out here: <a class="button" href="/c?start=${starttime}&end=${input1}" rel="noopener noreferrer" target="_blank">Open in new tab</a> or you can <a class="button" href="/c?start=${starttime}&end=${input1}">Replace the current tab</a>`
+} else {
+  text1 = `That's not a valid time!` }
+
+  document.getElementById("timeresult").innerHTML = text1;
+}
+    </script>
+  </body>
+</html>
