@@ -15,7 +15,7 @@
     text-decoration: underline;
     color: #1E8582;
   }
-  
+
    .topnav {
             overflow: hidden;
             border-radius: 8px;
@@ -54,6 +54,12 @@
     text-decoration: none;
 }
 
+input {
+  background: none;
+  color: #fff;
+  border: 3px solid #1E8582;
+}
+
 }
 @media (prefers-color-scheme: light) {
   body {
@@ -72,7 +78,7 @@
     text-decoration: underline;
     color: #78E0DC;
   }
-  
+
   .topnav {
             overflow: hidden;
             border-radius: 8px;
@@ -110,6 +116,12 @@
     background: #90ffff;
     color: #ffffff;
     text-decoration: none;
+}
+
+input {
+  background: none;
+  color: #fff;
+  border: 3px solid #78E0DC;
 }
 
 }
