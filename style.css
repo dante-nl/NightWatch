@@ -58,6 +58,7 @@ input {
   background: none;
   color: #fff;
   border: 3px solid #1E8582;
+  border-radius: 30px;
 }
 
 .box {
@@ -125,9 +126,11 @@ input {
 }
 
 input {
+
   background: none;
-  color: #fff;
-  border: 3px solid #78E0DC;
+  color: black;
+  border: 3px solid #78E0DD;
+  border-radius: 30px;
 }
 
 .box {
