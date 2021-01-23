@@ -1,28 +1,56 @@
 <!DOCTYPE html>
-<html lang="en"">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Premade timers - Night Watch</title>
+    <title>Premade curfuw timer - NightWatch</title>
     <link rel="stylesheet" href="https://nw-fallback.netlify.app/style.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon//site.webmanifest">
+    <link rel="manifest" href="/favicon/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Premade timers - NightWatch" />
+    <meta property="og:title" content="Premade curfew timer - NightWatch" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="http://nw-fallback.netlify.app/image/NightWatchIcon.png" />
-    <meta property="og:description" content="A list of premade timers!" />
+    <meta property="og:description" content="This is a premade curfuw timer" />
     <meta property="theme-color" content="#78E0DC" />
   </head>
   <body>
-     <div class="topnav" id="navbar"><a href="/index" style="text-decoration: none; color: #ffffff; float: left;">Home</a><a href="premade" style="text-decoration: none; color: #e6e6e6; float: right;">Premade timers</a></div>
-    <h1>Premade timers</h1>
-    <h2>Here are a few timers that are already made</h2>
-    <div class="box">
-<h1>21:00 - 4:30</h1>
-<h2>Perfect for citiziens of the Netherlands!</h2>
-<p><a class="button" href="/premade/21-00_4-30" rel="noopener noreferrer" target="_blank">Open in new tab</a> or you can <a class="button" href="/premade/21-00_4-30">Replace the current tab</a></p>
-</div>
+    <div class="topnav" id="navbar"><a href="/index" style="text-decoration: none; color: #ffffff; float: left;">Home</a><a href="premade" style="text-decoration: none; color: #e6e6e6; float: right;">Premade timers</a></div>
+    <h1 id="countdown">Loading...</h1>
+      <a class="button" href="/index">I want to make a countdown!</a>
+    <script>
+        var countDownDate = new Date(`Feb 28, 6969 21:00:00`).getTime();
+        var countDownDate1 = new Date(`Feb 29, 6969 4:30:00`).getTime();
+
+        var x = setInterval(function() {
+
+          var now = new Date().getTime();
+
+          var distance = countDownDate1 - now;
+
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          var distance1 = countDownDate - now;
+
+          var days1 = Math.floor(distance1 / (1000 * 60 * 60 * 24));
+          var hours1 = Math.floor((distance1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes1 = Math.floor((distance1 % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds1 = Math.floor((distance1 % (1000 * 60)) / 1000);
+
+          document.getElementById("countdown").innerHTML = hours1 + ":"
+          + minutes1 + ":" + seconds1 + " until curfew goes in and " + hours + ":"
+          + minutes + ":" + seconds + " until it ends";
+
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "Counted down";
+          }
+        })
+
+</script>
   </body>
 </html>
